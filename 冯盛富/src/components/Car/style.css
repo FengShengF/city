@@ -1,0 +1,27 @@
+.car{
+    width:100%;
+    height:100%;
+    overflow-y:scroll;
+    padding-top:30px;
+    box-sizing: border-box;
+}
+.car .title{
+    width:100%;
+    height:30px;
+    background:skyblue;
+    position:fixed;
+    top:47px;
+}
+.car .title li{
+    float:left;
+    width:25%;
+    height:30px;
+    text-align:center;
+    line-height:30px;
+}
+.car .actived{
+    color:red;
+}
+.car .ccc{
+    height:100%;
+}

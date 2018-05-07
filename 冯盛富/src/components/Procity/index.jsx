@@ -8,7 +8,8 @@ class Procity extends Component {
         super(props)
         this.state = {
             provinceCity:this.props.provinceCity,
-            shiqu: []
+            shiqu: [],
+            indexs:11,
         }
     }
     componentWillMount() {
@@ -19,7 +20,7 @@ class Procity extends Component {
         })
     }
     render() {
-        const { provinceCity,shiqu } = this.state
+        const { provinceCity,shiqu,indexs } = this.state
 
         return (
             <div className='procity'>
@@ -31,7 +32,7 @@ class Procity extends Component {
                                     <p>{item.letter}</p>
                                     {
                                         item.province.map((items, indexs) => {
-                                            return <li key={indexs} ref={items.name} onClick={(e)=>{this.addClassLeft(e,items.name)}}>{items.name}</li>
+                                            return <li key={indexs} ref={items.name} onClick={(e)=>{this.addClassLeft(e,items.name,items)}}>{items.name}</li>
                                         })
                                     }
                                 </div>
@@ -40,14 +41,21 @@ class Procity extends Component {
                         })
                     }
                 </div>
-                <div className='right'>
+                <div className='content'>
                     {
-                        shiqu.length!=0 && shiqu.map((item,index)=>{
+                        
+                        shiqu.length!=0 && shiqu.map((item,index)=>{         
                             return(
                                 <div key={index} className='rightEv'>
                                     {
                                         item.map((items,ind)=>{
-                                            return <li key={ind}>{items.name}</li>
+                                            return (
+                                                items.id.slice(0,2) == indexs? 
+                                                <li key={ind}>{items.name}</li> :
+                                                ''
+                                            )
+                                            
+                                            
                                         })
                                     }
                                 </div>
@@ -56,10 +64,27 @@ class Procity extends Component {
                     }
 
                 </div>
+                <div className='right'>  
+                    {
+                        provinceCity.provinceArr.map((item, ind) => {
+                            return (
+                                <div key={ind} className='tit'>
+                                    <p>{item.letter}</p>
+                                </div>
+
+                            )
+                        })
+                    }
+                </div>
             </div>
         )
     }
-    addClassLeft(e,ev){
+    addClassLeft(e,ev,items){
+        this.setState({
+            indexs:items.id.slice(0,2)
+        })
+        console.log(indexs)
+
         Object.keys(this.refs).forEach((key)=>{
             this.refs[key].className = ''
         })

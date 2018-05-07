@@ -22,19 +22,31 @@
 .procity .left li{
     background:#eee
 }
-.procity .right{
-    float:right;
-    width:60%;
+.procity .content{
+    float:left;
+    width:50%;
     height:100%;
     overflow-y: scroll;
+    background:#ccc;
 }
-.procity .right .rightEv li{
+ .rightEv li{
     width:100%;
     height:30px;
-    line-height:30px;
-    text-align:center;
-    background:#ccc;
+
 }
 .procity .left .actived{
     background:red
+}
+.procity .right{
+    width:10%;
+    height:100%;
+    overflow-y: scroll;
+    float:right;
+    background:#eee
+}
+.procity .tit p{
+ width:100%;
+ height:20px;
+ line-height:20px;
+ text-align:center;
 }

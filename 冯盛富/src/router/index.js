@@ -10,44 +10,41 @@ const routes = {
     NAV: [
         {
             title: '首页',
-            to: '/index/home',
+            to: '/home',
             active: 'active'
         },
         {
             title: '分类',
-            to: '/index/classify',
+            to: '/classify',
             active: 'active'
         },
         {
             title: '购物车',
-            to: '/index/car',
+            to: '/car',
             active: 'active'
         },
         {
             title: '我的',
-            to: '/index/mine',
+            to: '/mine',
             active: 'active'
         },
     ],
     ROUTER: [
+
         {
-            path: '/',
+            path: '/home',
             component: Home
         },
         {
-            path: '/index/home',
-            component: Home
-        },
-        {
-            path: '/index/classify',
+            path: '/classify',
             component: Classify
         },
         {
-            path: '/index/car',
+            path: '/car',
             component: Car
         },
         {
-            path: '/index/mine',
+            path: '/mine',
             component: Mine
         },
         {
