@@ -1,0 +1,40 @@
+.procity{
+     width:100%;
+     height:100%;
+     overflow: hidden;
+}
+.procity .left{
+    float:left;
+    width:40%;
+    height:100%;
+    overflow-y: scroll;
+}
+.procity .left p,.procity .left li{
+    display: inline-block;
+    width:100%;
+    height:30px;
+    line-height:30px;
+    text-align:center;
+}
+.procity .left p{
+    background:#ccc
+}
+.procity .left li{
+    background:#eee
+}
+.procity .right{
+    float:right;
+    width:60%;
+    height:100%;
+    overflow-y: scroll;
+}
+.procity .right .rightEv li{
+    width:100%;
+    height:30px;
+    line-height:30px;
+    text-align:center;
+    background:#ccc;
+}
+.procity .left .actived{
+    background:red
+}
